@@ -31,7 +31,7 @@
                     </td>
                     <td>
                         <span v-if="item.is_enabled" class="text-success">啟用</span>
-                        <span>未啟用</span>
+                        <span v-else>未啟用</span>
                     </td>
                     <td>
                         <button class="btn btn-outline-primary btn-sm" @click="openModal(false, item)">編輯</button>
