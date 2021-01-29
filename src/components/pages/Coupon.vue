@@ -33,26 +33,9 @@
                 </tr>
             </tbody>
         </table>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item" @click="getList(pagination.current_page-1)" :class="{'disabled':!pagination.has_pre}">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
+        
+        <pagination :has_pre="pagination.has_pre" :has_next="pagination.has_next" :total_page="pagination.total_pages" :current_page="pagination.current_page" v-on:increment="getList"></pagination>
 
-                <li class="page-item" v-for="(page, key) in pagination.total_pages" :key="key" @click="getList(page)" :class="{'active':pagination.current_page===page}"><a class="page-link" href="#">{{page}}</a></li>
-                
-                
-                <li class="page-item" @click="getList(pagination.current_page+1)" :class="{'disabled':!pagination.has_next}">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
         <!--優惠券Modal-->
         <div class="modal fade" id="CouponModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -142,7 +125,7 @@
 
 <script>
     import $ from 'jquery';
-
+    import pagination from './pagination';
     export default{
         data(){
             return{
@@ -151,6 +134,9 @@
                 pagination:{},
                 isNew:false
             }
+        },
+        components:{
+            pagination
         },
         methods:{
             getList(page = 1){
