@@ -8,8 +8,7 @@
 
     <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <router-view></router-view>
-      <router-view name='訂單列表'></router-view>
-      <router-view name='優惠券'></router-view>
+      
     </main>
   </div>
 </div>

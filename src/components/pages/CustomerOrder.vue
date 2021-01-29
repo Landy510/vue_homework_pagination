@@ -22,7 +22,7 @@
         methods:{
             getProducts(page = 1){
                 const vm = this;
-                const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/products?page=${page}`;
+                const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products?page=${page}`;
                 vm.isLoading = true;
                 this.$http.get(api).then((response) => {
                     console.log('response',response.data);
