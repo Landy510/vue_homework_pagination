@@ -40,6 +40,7 @@
             return{
                 product:[],
                 pagination:{},
+                isLoading:false,
             }
         },
         components:{

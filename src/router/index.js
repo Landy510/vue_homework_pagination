@@ -6,6 +6,7 @@ import Login from '@/components/pages/login'
 import Products from '@/components/pages/Products'
 import Order from '@/components/pages/Order'
 import Coupon from '@/components/pages/Coupon'
+import CustomerOrder from '@/components/pages/CustomerOrder' 
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +44,18 @@ export default new Router({
           component: Coupon,
           meta: { requiresAuth: true },
         }
+      ]
+    },
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: DashBoard,
+      children:[
+        {
+          path:'customer_order',
+          name: 'CustomerOrder',
+          component: CustomerOrder,
+        },
       ]
     },
   ]

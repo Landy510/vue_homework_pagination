@@ -132,7 +132,8 @@
                 tempProduct:{},
                 products:[],
                 pagination:{},
-                isNew:false
+                isNew:false,
+                isLoading:false,
             }
         },
         components:{
